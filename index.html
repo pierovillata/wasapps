@@ -35,6 +35,9 @@
         // window.moveBy(x,y);
         if (contador == 3) {
           //alert("Muchas gracias por transferirme : " + cantidad + "$USD");
+          if(cantidad ==0){
+            cantidad = dinero;
+          }
           var texto = document.getElementById('lol').innerHTML="GRACIAS POR TRANFERIRME "+ cantidad + "$USD";                   
         //  window.close();
         } else {

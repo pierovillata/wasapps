@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRANFERENCIA BANCARIA INMEDIATA</title>
+    <style>
+      body {
+        background-color: black;
+        width: 100%;
+        height: 100%;
+      }
+      #lol {
+        font-size: 40px;
+        color: yellow;
+      }
+    </style>
+    <script>
+      var contador = 1;
+      var cantidad =0;
+      function moverVentana() {
+        /*  let x = 120;
+            let y= 60; */
+
+        let dinero = document.getElementById("dinero");
+        dinero = dinero.value;
+        dinero = parseInt(dinero);
+        cantidad = cantidad + dinero;
+        var resp = window.confirm(
+          "Algo falló! Presione aceptar para repetir transación de: " +
+            dinero +
+            "$USD"
+        );
+        // window.moveBy(x,y);
+        if (contador == 3) {
+          //alert("Muchas gracias por transferirme : " + cantidad + "$USD");
+          var texto = document.getElementById('lol').innerHTML="GRACIAS POR TRANFERIRME "+ cantidad + "$USD";                   
+        //  window.close();
+        } else {
+          if (true) {
+            contador = contador + 1;
+            moverVentana();
+          } else {
+            contador = contador + 1;
+            moverVentana();
+          }
+        }
+      }
+
+      
+    </script>
+  </head>
+  <body>
+    <center>
+      <b id="lol">CANTIDAD DE DINERO</b><br />
+      <input id="dinero" />
+    </center>
+    <br />
+
+    <center>
+      <button onclick="moverVentana()" value="CLOSE">
+        Transferencia Inmediata
+      </button>
+    </center>
+  </body>
+</html>
